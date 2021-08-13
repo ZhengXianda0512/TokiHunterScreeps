@@ -12,7 +12,7 @@ let configMap = {
         "hostname": "screeps.com",
         "port": 443,
         "path": "/",
-        "branch": "default"
+        "branch": "default-squads"
     },
     "local": {
         "copyPath": "./dist"
