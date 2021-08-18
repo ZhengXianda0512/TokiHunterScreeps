@@ -22,6 +22,9 @@ export class Harvester extends Squad {
                 if(creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}})
                 }
+            } else {
+                let parkIndex = creep.memory.number % Memory.parks.length
+                creep.moveTo(Memory.parks[parkIndex], {visualizePathStyle: {stroke: '#00ffff'}})
             }
         }
     }

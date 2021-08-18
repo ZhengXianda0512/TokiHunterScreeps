@@ -1,6 +1,6 @@
-Spawn.prototype.notice = function () {
+Spawn.prototype.prepare = function () {
     let spawning = this.spawning
-    if(spawning) { 
+    if(spawning) {
         var spawningCreep = Game.creeps[spawning.name]
         this.room.visual.text(
             '🛠️ ' + spawningCreep.memory.squad,
@@ -8,6 +8,8 @@ Spawn.prototype.notice = function () {
             this.pos.y, 
             {align: 'left', opacity: 0.8})
     }
+
+    this.memory.isSpawning = !!spawning
 }
 
 /*
@@ -15,14 +17,17 @@ Spawn.prototype.notice = function () {
 * @spawn 出生点
 */
 Spawn.prototype.beefedUp = function (squad) {
-    if (squad.creeps.length < squad.limit) {
-        let creepName = squad.type+Game.time
+    if (squad.creeps.length < squad.limit && !this.memory.isSpawning) {
+        let number = Game.time
+        let creepName = squad.type+number
         let code = this.spawnCreep(squad.mods, creepName, {
             memory: {
-                squad: squad.type
+                squad: squad.type,
+                number: number
             }
         })
         if (code == OK) {
+            this.memory.isSpawning = true
             squad.creeps.push(creepName)
         }
     }

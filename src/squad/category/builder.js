@@ -21,6 +21,9 @@ export class Builder extends Squad {
                 if(creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}})
                 }
+            } else {
+                let parkIndex = creep.memory.number % Memory.parks.length
+                creep.moveTo(Memory.parks[parkIndex], {visualizePathStyle: {stroke: '#00ffff'}})
             }
         } else {
             var sources = creep.room.find(FIND_SOURCES)

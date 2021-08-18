@@ -3,7 +3,9 @@ export class Squad {
         this.type = this.constructor.name;
         this.mods = mods;
         this.limit = limit;
-        this.creeps = [];
+        this.creeps = _
+        .filter(Game.creeps, (creep) => creep.memory.squad == this.type)
+        .map((creep) => creep.name);
     }
     
     static whip (creep) {
