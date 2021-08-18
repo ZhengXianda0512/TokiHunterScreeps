@@ -15,7 +15,7 @@ let configMap = {
         "branch": "default-squads"
     },
     "local": {
-        "copyPath": "./dist"
+        "copyPath": "/Users/zhengxianda/Library/Application Support/screeps/scripts/127_0_0_1___21025/default"
     }
 }
 
