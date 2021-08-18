@@ -6,6 +6,6 @@ export class Construction {
     }
     
     toString() {
-        return `[${this.type}] offset=${this.offset}, name=${this.name??"null"}}`
+        return `[${this.type}] offset=${this.offset}, name=${this.name}}`
     }
 }
