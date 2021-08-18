@@ -52,7 +52,12 @@ export function init() {
             new ConstructionMap.Road(-3,0),
             new ConstructionMap.Road(-4,0),
             new ConstructionMap.Road(-5,0),
+
             new ConstructionMap.Road(-4,1),
+            new ConstructionMap.Road(-3,2),
+            new ConstructionMap.Road(-2,3),
+            new ConstructionMap.Road(-1,4),
+
             new ConstructionMap.Road(-4,-1),
             //right
             new ConstructionMap.Road(1,0),
@@ -60,24 +65,33 @@ export function init() {
             new ConstructionMap.Road(3,0),
             new ConstructionMap.Road(4,0),
             new ConstructionMap.Road(5,0),
+
             new ConstructionMap.Road(4,1),
+            new ConstructionMap.Road(3,2),
+            new ConstructionMap.Road(2,3),
+            new ConstructionMap.Road(1,4),
+
             new ConstructionMap.Road(4,-1),
             //top            
             new ConstructionMap.Road(0,-1),
             new ConstructionMap.Road(0,-2),
             new ConstructionMap.Road(0,-3),
-            new ConstructionMap.Road(0,-4),
-            new ConstructionMap.Road(1,-3),
-            new ConstructionMap.Road(-1,-3),
-            new ConstructionMap.Road(1,-5),
-            new ConstructionMap.Road(-1,-5),
+
+            new ConstructionMap.Road(1,-2),
+            new ConstructionMap.Road(2,-2),
+            new ConstructionMap.Road(3,-2),
+
+            new ConstructionMap.Road(-1,-2),
+            new ConstructionMap.Road(-2,-2),
+            new ConstructionMap.Road(-3,-2),
+
+            new ConstructionMap.Road(1,-4),
+            new ConstructionMap.Road(-1,-4),
             //bottom
             new ConstructionMap.Road(0,1),
             new ConstructionMap.Road(0,2),
             new ConstructionMap.Road(0,3),
-            new ConstructionMap.Road(0,4),
-            new ConstructionMap.Road(1,5),
-            new ConstructionMap.Road(-1,5),
+            new ConstructionMap.Road(0,5),
         ]
     }
 
