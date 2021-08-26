@@ -1,3 +1,4 @@
+import "./toki"
 import "./structure/spawn/spawn"
 
 import { GameManager } from "./GameManager"
@@ -16,10 +17,10 @@ export const loop = function () {
     //spawning
     GameManager.spawn.prepare()
 
-    Memory.squads.forEach((squad) => {
+    _.forEach(Toki.squads, (squad) => {
         //Squads budedUp
-        GameManager.beefedUpSquad(squad)
+        Toki.beefedUpSquad(squad)
         //Squads update
-        GameManager.updateSquad(squad)
-    })
+        Toki.dispatchSquad(squad)
+    });
 }

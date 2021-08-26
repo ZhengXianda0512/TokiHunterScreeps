@@ -1,8 +1,8 @@
-import { Squad } from "../base/base";
+import { Squad } from "../squad"
 
 export class Upgrader extends Squad {
-    constructor(limit) {
-        super([WORK,CARRY,MOVE], limit);
+    constructor(limit, name) {
+        super([WORK,CARRY,MOVE], limit, name);
     }
 
     static whip (creep) {
