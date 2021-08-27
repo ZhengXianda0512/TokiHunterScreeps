@@ -18,7 +18,7 @@ Object.defineProperty(Toki, 'blueprintMap', {
 
 /**
  * 获取所有蓝图映射表
- * @returns 当前所有小队映射表 [name: blueprint]
+ * @returns 当前所有蓝图映射表 [name: blueprint]
  */
 Object.defineProperty(Toki, 'blueprints', {
     get: function() {
