@@ -15,4 +15,18 @@ global.Toki = {
         }
         return this._spawn
     },
+
+    prepare: function() {
+        let spawning = this.spawn.spawning
+        if(spawning) {
+            var spawningCreep = Game.creeps[spawning.name]
+            this.spawn.room.visual.text(
+                '🛠️ ' + spawningCreep.memory.squad,
+                this.spawn.pos.x + 1, 
+                this.spawn.pos.y, 
+                {align: 'left', opacity: 0.8})
+        }
+
+        this.spawn.memory.isSpawning = !!spawning
+    },
 }

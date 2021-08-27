@@ -1,8 +1,6 @@
 import "./toki"
 import "./squad/toki+squad"
-import { Position } from "./utils/position"
-
-import { map as ConstructionMap } from "./construction/map"
+import "./blueprint/toki+blueprint"
 
 //init
 export function init() {
@@ -10,94 +8,91 @@ export function init() {
 
     let forcibly = true
 
-    Toki.buildSquad(new Toki.squadMap.Harvester(1, "Harvester1"), forcibly)
-    Toki.buildSquad(new Toki.squadMap.Upgrader(8, "Upgrader1"), forcibly)
-    Toki.buildSquad(new Toki.squadMap.Builder(8, "Builder1"), forcibly)
+    let squads = [
+        new Toki.squadMap.Harvester(1, "Harvester1"),
+        new Toki.squadMap.Upgrader(8, "Upgrader1"),
+        new Toki.squadMap.Builder(8, "Builder1"),
+    ]
 
-    if (forcibly || !Memory.extensions) {
-        Memory.extensions = [
-            //left-up
-            new ConstructionMap.Extension(-1,-1),
-            new ConstructionMap.Extension(-2,-1),
-            new ConstructionMap.Extension(-3,-1),
-            new ConstructionMap.Extension(-2,-2),
-            new ConstructionMap.Extension(-1,-3),
-            //right-up
-            new ConstructionMap.Extension(1,-1),
-            new ConstructionMap.Extension(2,-1),
-            new ConstructionMap.Extension(3,-1),
-            new ConstructionMap.Extension(2,-2),
-            new ConstructionMap.Extension(1,-3),
-            //left-bottom
-            new ConstructionMap.Extension(-1,1),
-            new ConstructionMap.Extension(-2,1),
-            new ConstructionMap.Extension(-3,1),
-            new ConstructionMap.Extension(-2,2),
-            new ConstructionMap.Extension(-1,3),
-            //right-bottom
-            new ConstructionMap.Extension(1,1),
-            new ConstructionMap.Extension(2,1),
-            new ConstructionMap.Extension(3,1),
-            new ConstructionMap.Extension(2,2),
-            new ConstructionMap.Extension(1,3),
-        ]
-    }
+    squads.forEach(squad => Toki.buildSquad(squad, forcibly))
 
-    if (forcibly || !Memory.roads) {
-        Memory.roads = [
-            //left
-            new ConstructionMap.Road(-1,0),
-            new ConstructionMap.Road(-2,0),
-            new ConstructionMap.Road(-3,0),
-            new ConstructionMap.Road(-4,0),
-            new ConstructionMap.Road(-5,0),
-            //right
-            new ConstructionMap.Road(1,0),
-            new ConstructionMap.Road(2,0),
-            new ConstructionMap.Road(3,0),
-            new ConstructionMap.Road(4,0),
-            new ConstructionMap.Road(5,0),
-            //top            
-            new ConstructionMap.Road(0,-1),
-            new ConstructionMap.Road(0,-3),
-            new ConstructionMap.Road(0,-5),
-            //bottom
-            new ConstructionMap.Road(0,1),
-            new ConstructionMap.Road(0,3),
-            new ConstructionMap.Road(0,5),
-            //left-up
-            new ConstructionMap.Road(-4,-1),
-            new ConstructionMap.Road(-1,-2),
-            new ConstructionMap.Road(-3,-2),
-            new ConstructionMap.Road(-2,-3),
-            new ConstructionMap.Road(-1,-4),
-            //right-up
-            new ConstructionMap.Road(4,-1),
-            new ConstructionMap.Road(1,-2),
-            new ConstructionMap.Road(3,-2),
-            new ConstructionMap.Road(2,-3),
-            new ConstructionMap.Road(1,-4),
-            //left-bottom
-            new ConstructionMap.Road(-4,1),
-            new ConstructionMap.Road(-1,2),
-            new ConstructionMap.Road(-3,2),
-            new ConstructionMap.Road(-2,3),
-            new ConstructionMap.Road(-1,4),
-            //right-bottom
-            new ConstructionMap.Road(4,1),
-            new ConstructionMap.Road(1,2),
-            new ConstructionMap.Road(3,2),
-            new ConstructionMap.Road(2,3),
-            new ConstructionMap.Road(1,4),
-        ]
-    }
+    let extensions = [
+        //left-up
+        new Toki.blueprintMap.Extension(-1,-1),
+        new Toki.blueprintMap.Extension(-2,-1),
+        new Toki.blueprintMap.Extension(-3,-1),
+        new Toki.blueprintMap.Extension(-2,-2),
+        new Toki.blueprintMap.Extension(-1,-3),
+        //right-up
+        new Toki.blueprintMap.Extension(1,-1),
+        new Toki.blueprintMap.Extension(2,-1),
+        new Toki.blueprintMap.Extension(3,-1),
+        new Toki.blueprintMap.Extension(2,-2),
+        new Toki.blueprintMap.Extension(1,-3),
+        //left-bottom
+        new Toki.blueprintMap.Extension(-1,1),
+        new Toki.blueprintMap.Extension(-2,1),
+        new Toki.blueprintMap.Extension(-3,1),
+        new Toki.blueprintMap.Extension(-2,2),
+        new Toki.blueprintMap.Extension(-1,3),
+        //right-bottom
+        new Toki.blueprintMap.Extension(1,1),
+        new Toki.blueprintMap.Extension(2,1),
+        new Toki.blueprintMap.Extension(3,1),
+        new Toki.blueprintMap.Extension(2,2),
+        new Toki.blueprintMap.Extension(1,3),
+    ]
 
-    if (forcibly || !Memory.parks) {
-        Memory.parks = [
-            //left
-            new Position(-4,0),
-            //right
-            new Position(4,0),
-        ]
-    }
+    let roads = [
+        //left
+        new Toki.blueprintMap.Road(-1,0),
+        new Toki.blueprintMap.Road(-2,0),
+        new Toki.blueprintMap.Road(-3,0),
+        new Toki.blueprintMap.Road(-4,0),
+        new Toki.blueprintMap.Road(-5,0),
+        //right
+        new Toki.blueprintMap.Road(1,0),
+        new Toki.blueprintMap.Road(2,0),
+        new Toki.blueprintMap.Road(3,0),
+        new Toki.blueprintMap.Road(4,0),
+        new Toki.blueprintMap.Road(5,0),
+        //top            
+        new Toki.blueprintMap.Road(0,-1),
+        new Toki.blueprintMap.Road(0,-3),
+        new Toki.blueprintMap.Road(0,-5),
+        //bottom
+        new Toki.blueprintMap.Road(0,1),
+        new Toki.blueprintMap.Road(0,3),
+        new Toki.blueprintMap.Road(0,5),
+        //left-up
+        new Toki.blueprintMap.Road(-4,-1),
+        new Toki.blueprintMap.Road(-1,-2),
+        new Toki.blueprintMap.Road(-3,-2),
+        new Toki.blueprintMap.Road(-2,-3),
+        new Toki.blueprintMap.Road(-1,-4),
+        //right-up
+        new Toki.blueprintMap.Road(4,-1),
+        new Toki.blueprintMap.Road(1,-2),
+        new Toki.blueprintMap.Road(3,-2),
+        new Toki.blueprintMap.Road(2,-3),
+        new Toki.blueprintMap.Road(1,-4),
+        //left-bottom
+        new Toki.blueprintMap.Road(-4,1),
+        new Toki.blueprintMap.Road(-1,2),
+        new Toki.blueprintMap.Road(-3,2),
+        new Toki.blueprintMap.Road(-2,3),
+        new Toki.blueprintMap.Road(-1,4),
+        //right-bottom
+        new Toki.blueprintMap.Road(4,1),
+        new Toki.blueprintMap.Road(1,2),
+        new Toki.blueprintMap.Road(3,2),
+        new Toki.blueprintMap.Road(2,3),
+        new Toki.blueprintMap.Road(1,4),
+    ]
+
+    let blueprints = []
+    blueprints = blueprints.concat(extensions)
+    blueprints = blueprints.concat(roads)
+
+    blueprints.forEach(blueprint => Toki.buildBlueprint(blueprint, forcibly))
 }
