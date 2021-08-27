@@ -12,7 +12,7 @@ let configMap = {
         "hostname": "screeps.com",
         "port": 443,
         "path": "/",
-        "branch": "default-squads"
+        "branch": process.env.BRANCH
     },
     "local": {
         "copyPath": "/Users/zhengxianda/Library/Application Support/screeps/scripts/127_0_0_1___21025/default"

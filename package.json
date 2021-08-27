@@ -15,7 +15,8 @@
   "scripts": {
     "build": "rollup -cw",
     "local": "rollup -cw --environment DEST:local",
-    "push": "rollup -cw --environment DEST:main"
+    "push_default": "rollup -cw --environment DEST:main --environment BRANCH:default",
+    "push_dev": "rollup -cw --environment DEST:main --environment BRANCH:dev"
   },
   "keywords": [],
   "author": "",
