@@ -13,6 +13,6 @@ export class Blueprint {
     
     toString() {
         let name = this.static.name?`, name=${this.static.name}`:""
-        return `[${this.static.type}] position=pos${name}`
+        return `[${this.static.type}] position=${this.pos}${name}`
     }
 }
