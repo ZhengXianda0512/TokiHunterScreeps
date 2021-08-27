@@ -23,7 +23,7 @@ global.Toki = {
         return this._controller
     },
 
-    prepare: function() {
+    showGameInfo: function() {
         let room = this.room
         let spawn = this.spawn
         let controller = this.controller

@@ -5,7 +5,7 @@ import { init } from "./init"
 init()
 
 export const loop = function () {
-    Toki.prepare()
+    Toki.showGameInfo()
 
     _.forEach(Toki.blueprints, (blueprint) => {
         Toki.realizeBlueprint(blueprint)
