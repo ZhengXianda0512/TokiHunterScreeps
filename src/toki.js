@@ -47,13 +47,15 @@ global.Toki = {
             room.visual.rect(-0.5,i-0.5,20,1, {stroke: '#000000'})
         }
         //控制器数据
-        let increase = controller.progress - room.memory.controller.progress
-        let describe = `Level: ${controller.level} [${controller.progress}(${increase})/${controller.progressTotal}] << ${controller.ticksToDowngrade}`
-        room.visual.text(
-            describe,
-            0,0.2+0,
-            {align: 'left', opacity: 0.8, color: '#000000'}
-        )
+        if (room.memory.controller) {
+            let increase = controller.progress - room.memory.controller.progress
+            let describe = `Level: ${controller.level} [${controller.progress}(${increase})/${controller.progressTotal}] << ${controller.ticksToDowngrade}`
+            room.visual.text(
+                describe,
+                0,0.2+0,
+                {align: 'left', opacity: 0.8, color: '#000000'}
+            )
+        }
         room.memory.controller = controller
     },
 }
