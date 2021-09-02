@@ -44,7 +44,7 @@ Toki.buildBlueprint = function (blueprint, forcibly = false) {
         localBlueprint[key] = blueprint.static[key]
     }
     for (let key in blueprint.dynamic) {
-        if (!localBlueprint[key]) localSquad[key] = blueprint.dynamic[key]
+        if (!localBlueprint[key]) localBlueprint[key] = blueprint.dynamic[key]
     }
 }
 
